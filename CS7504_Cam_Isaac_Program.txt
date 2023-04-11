@@ -1,0 +1,313 @@
+//Programmer: Isaac Sturzaker
+//Date: 20/08/21
+//Exercise: Assignment 3, Exercise 9
+//Folder: C:\Weltec\LVL 5\T2\Programming
+//Description: Take a number from the usser an display the Cosine and logarithm
+
+#include<conio.h>
+#include<iostream>
+#include<math.h>
+#include<iomanip>
+
+using namespace std;
+
+//----------------------------------------------------------------------------------------------------------------
+
+int main()
+{
+	int number;
+
+	cout << "Please input a number: ";
+	cin >> number;
+
+	clrscr();
+
+	cout << setprecision( 4 ) << fixed;
+	cout << "The cosine for " << number << " is " << cos ( 2 * 3.1415927 * number / 360 ) << endl;
+	cout << "The logarithm for " << number << " is " << log10( number );
+
+	getch();
+	return 0;
+}
+
+//----------------------------------------------------------------------------------------------------------------
+//################################################################################################################
+//----------------------------------------------------------------------------------------------------------------
+
+//Programmer: Isaac Sturzaker
+//Date: 20/08/21
+//Exercise: Assignment 3, Exercise 10
+//Folder:C:\Weltec\LVL 5\T2\Programming
+//Description: Input a number and display a multipleication table from 1-12 using that number
+
+#include<conio.h>
+#include<iostream>
+
+using namespace std;
+
+//----------------------------------------------------------------------------------------------------------------
+
+int main()
+{
+	int input;
+
+	while( input != -1 )
+	{
+		cout << "Please input a number or enter -1 to exit: ";
+		cin >> input;
+		clrscr();
+
+		cout << "Multiplication Table:" << endl << endl;
+
+		for ( int i = 0; i <= 12; i++ )
+			cout << i << " times " << input << " is " << i * input << endl;
+
+		cout << "Press enter to continue";
+		getch();
+		clrscr();
+	}
+
+	getch();
+	return 0;
+}
+
+
+//----------------------------------------------------------------------------------------------------------------
+//################################################################################################################
+//----------------------------------------------------------------------------------------------------------------
+
+//Programmer: Isaac Sturzaker
+//Date: 20/08/21
+//Exercise: Assignment 3, Exercise 11
+//Folder: C:\Weltec\LVL 5\T2\Programming
+//Description: Input a list of users and then program will print out the first and last in aphabetical order
+
+
+#include<string>
+#include<conio.h>
+#include<iostream>
+
+using namespace std;
+
+//----------------------------------------------------------------------------------------------------------------
+
+int main()
+{
+	string userName;
+	string first;
+	string last;
+	int counter = 0; //This makes sure that the first name entered goes into first position
+
+	do{
+		cout << "Please input a name: ";
+		cin >> userName;
+
+		if ( counter == 0 )
+		{
+			first = userName;
+			last = userName;
+			counter++;
+		}
+
+		else
+			if ( userName < first ){
+				counter++;
+				first = userName;
+			}
+
+		else
+			if ( userName > last ){
+			counter++;
+			last = userName;
+		}
+	}
+	while ( userName != "exit" );
+
+	clrscr();
+	cout << "Information" << endl << endl;
+
+	if ( first == "exit" && last == "exit" )
+		cout << "No names were entered";
+
+
+	else
+		if ( counter == 2 && first == "exit" )
+			cout << "Only one name entered is:\n" << last;
+		
+
+		else
+			if ( counter == 2 && last == "exit" )
+				cout << "Only one name entered is:\n" << first;
+			
+
+			else
+				cout << "The first name is " << first << " and the last name is " << last << endl;
+
+	getch();
+	return 0;
+}
+
+//----------------------------------------------------------------------------------------------------------------
+//################################################################################################################
+//----------------------------------------------------------------------------------------------------------------
+
+//Programmer: Isaac Sturzaker
+//Date: 20/08/21
+//Exercise: Assignment 3, Exercise 9
+//Folder: C:\Weltec\LVL 5\T2\Programming
+//Description: Display a list of holiday destinations and then display facts about the destination if chosen
+
+#include<conio.h>
+#include<iostream>
+#include<cmath>
+#include<string>
+
+using namespace std;
+
+//----------------------------------------------------------------------------------------------------------------
+
+void germany();
+void england();
+void america();
+void australia();
+void menu();
+int switchf();
+
+
+int main()
+{
+	switchf();
+	return 0;
+}
+
+void menu()
+{
+	cout << "Please enter the number of destination you would like to visit: " << endl;
+	cout << "1: Germany" << endl;
+	cout << "2: England" << endl;
+	cout << "3: America" << endl;
+	cout << "4: Australia" << endl;
+	return;
+}
+
+
+void germany()
+{
+	cout << "You have chosen Germany" << endl;
+	cout << "The capital of Germany is Berlin" << endl;
+	cout << "The population of Germany is 83 Million" << endl;
+	cout << "The currency of Germany is Euros" << endl;
+	cout << "Press enter to continue";
+
+	getch();
+	clrscr();
+	return;
+}
+
+void england()
+{
+	cout << "You have chosen England" << endl;
+	cout << "The capital of England is London" << endl;
+	cout << "The population of England is 56 Million" << endl;
+	cout << "The currency of England is Pounds" << endl;
+	cout << "Press enter to continue";
+
+	getch();
+	clrscr();
+	return;
+}
+
+void america()
+{
+	cout << "You have chosen America" << endl;
+	cout << "The capital of America is Washington D.C" << endl;
+	cout << "The population of America is 328 Million" << endl;
+	cout << "The currency of America is Dollars" << endl;
+	cout << "Press enter to continue";
+
+	getch();
+	clrscr();
+	return;
+}
+
+void australia()
+{
+	cout << "You have chosen Australia" << endl;
+	cout << "The capital of Australia is Canberra" << endl;
+	cout << "The population of Australia is 25 Million" << endl;
+	cout << "The currency of Australia is Australian Dollar" << endl;
+	cout << "Press enter to continue";
+
+	getch();
+	clrscr();
+	return;
+}
+
+int switchf()
+{
+bool exit = true;
+while(exit){
+	menu();
+	int destination;
+	cout << "Answer: ";
+	cin >> destination;
+	clrscr();
+
+	switch(destination)
+	{
+	case 1:
+		germany();
+		break;
+
+	case 2:
+		england();
+		break;
+
+	case 3:
+		america();
+		break;
+
+	case 4:
+		australia();
+		break;
+	}
+
+	string userExit;
+	cout << "Would you like to continue(y/n): ";
+	cin >> userExit;
+
+	if (userExit == "n")
+		exit = false;
+
+	else
+		clrscr();
+}
+}
+
+//----------------------------------------------------------------------------------------------------------------
+//################################################################################################################
+//----------------------------------------------------------------------------------------------------------------
+
+//Exercise 10 Pseudocode:
+
+	//initialize variable
+
+	//Loop while input not -1
+
+	//Ask user for input
+
+	//Loop input 12 times and cout answer
+
+//----------------------------------------------------------------------------------------------------------------
+
+//Exercise 10 Pseudocode
+
+	//Declare Variable
+
+	//Loop until input is 'exit'
+
+		//If statment decides if name will be added to first or last
+	
+	//If statement to print out all possible outcomes
+
+	//Print message and names
