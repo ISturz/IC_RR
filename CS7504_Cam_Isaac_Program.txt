@@ -1,8 +1,10 @@
 *** Change Made - Removed Bottom Middle Programs ***
 
+*** Second Change Made - Changed Progammer name and date ***
 
-//Programmer: Isaac Sturzaker
-//Date: 20/08/21
+
+//Programmer: Isaac Sturzaker & Cam Felix
+//Date: 20/08/21 & 13/04/23
 //Exercise: Assignment 3, Exercise 9
 //Folder: C:\Weltec\LVL 5\T2\Programming
 //Description: Take a number from the usser an display the Cosine and logarithm
